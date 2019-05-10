@@ -5,7 +5,6 @@ import marked from '~/marked';
 // components
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-import Table from 'react-bootstrap/Table';
 
 // variables
 let defaultText = `# Welcome to my React Markdown Previewer!
