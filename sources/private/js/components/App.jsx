@@ -1,10 +1,11 @@
 // libraries
 import React from '~/react';
-import ReactMarkdown from '~/react-markdown';
+import marked from '~/marked';
 
 // components
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import Table from 'react-bootstrap/Table';
 
 // variables
 let defaultText = `# Welcome to my React Markdown Previewer!
@@ -50,7 +51,10 @@ And here. | Okay. | I think we get it.
 - Even if you use dashes or asterisks.
 * And last but not least, let's not forget embedded images:
 
-![React Logo w/ Text](https://goo.gl/Umyytc)`
+![React Logo w/ Text](https://goo.gl/Umyytc)`;
+marked.setOptions({
+  breaks: true
+});
 
 // export
 export default class App extends React.Component {
@@ -67,12 +71,6 @@ export default class App extends React.Component {
     });
   }
   render() {
-    function BlockQuote(props) {
-      return <blockquote className="blockquote">{props.children}</blockquote>
-    }
-    function Table(props) {
-      return <table className="table">{props.children}</table>
-    }
     return (
       <main id='main' className='py-4'>
         <div className='container'>
@@ -83,7 +81,7 @@ export default class App extends React.Component {
                 <Form.Control id="editor" className="p-4" as="textarea" value={this.state.text} onChange={this.handleChange}/>
               </div>
               <div className="col col-12 col-md-6 col-preview">
-                <ReactMarkdown id="preview" className="p-4" source={this.state.text} renderers={{table: Table, blockquote: BlockQuote}}/>
+                <div id="preview" className="p-4" dangerouslySetInnerHTML={{__html: marked(this.state.text)}}/>
               </div>
             </div>
           </Card>
