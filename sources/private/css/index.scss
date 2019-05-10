@@ -1,0 +1,31 @@
+@import './variables.scss';
+@import '~/bootstrap/scss/bootstrap.scss';
+
+textarea.form-control {
+  height: 100%;
+  border: none;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .col-input {
+    border-right: 1px solid $gray-200;
+    min-height: 88.5vh;
+    flex: 1 1 auto;
+  }
+  .col-preview {
+    min-height: 88.5vh;
+    flex: 1 1 auto;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .col-input {
+    border-bottom: 1px solid $gray-200;
+    min-height: 45vh;
+  }
+  .col-preview {
+    min-height: 45vh;
+  }
+}
