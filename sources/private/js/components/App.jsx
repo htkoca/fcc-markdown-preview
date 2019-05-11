@@ -3,8 +3,8 @@ import React from '~/react';
 import marked from '~/marked';
 
 // components
-import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
+import Card from '~/react-bootstrap/Card';
+import Form from '~/react-bootstrap/Form';
 
 // variables
 let defaultText = `# Welcome to my React Markdown Previewer!
