@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import '~/bootstrap/scss/bootstrap.scss';
+@import '@/css/variables';
+@import '~/bootstrap/scss/bootstrap';
 
 textarea.form-control {
   height: 100%;
